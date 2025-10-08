@@ -155,33 +155,3 @@ class OzonDomParser
     }
 }
 
-// Пример использования:
-// $parser = new OzonDomParser();
-// $sku = '727818702'; // Пример SKU
-// try {
-//     $data = $parser->parseBySku($sku);
-//     print_r($data);
-// } catch (Exception $e) {
-//     echo 'Ошибка: ',  $e->getMessage(), "\n";
-// }
-
-// Включаем отображение всех ошибок для удобной отладки
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-
-// --- Код для запуска парсера ---
-
-$parser = new OzonDomParser();
-$sku = '2102536131'; // <-- Можете подставить любой другой SKU для теста
-
-echo "--- Начинаю парсинг товара с OZON SKU: {$sku} ---" . PHP_EOL;
-
-try {
-    $data = $parser->parseBySku($sku);
-
-    echo '<pre>';
-    print_r($data);
-    echo '</pre>';
-} catch (Exception $e) {
-    echo 'Произошла ошибка: ',  $e->getMessage(), "\n";
-}
